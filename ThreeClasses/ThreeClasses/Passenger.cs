@@ -15,7 +15,7 @@ namespace ThreeClasses
         {
             FirstName = First_Name;
             LastName = Last_Name;
-            Console.WriteLine("Customer" + First_Name + Last_Name); //writes customers first and last name to the console
+            Console.WriteLine("Customer " + First_Name + Last_Name); //writes customers first and last name to the console
 
         }
     }

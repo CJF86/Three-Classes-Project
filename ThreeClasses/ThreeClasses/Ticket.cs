@@ -11,34 +11,40 @@ namespace ThreeClasses
         public int NumberOfTickets; //create constructor for variable
         public string TypeOfTicket; //create constructor for variable
         public bool Switch;
+
+        
         
 
         public Ticket(int NumberOfTickets,string TypeOfTicket)
         {
-            Console.WriteLine("How many tickets do you want: ");
-            NumberOfTickets = int.Parse(Console.ReadLine());
+            NumberOfTickets = TicketAmount; //Creates constructor for NumberOfTickets
+            TypeOfTicket = TicketType; //Creates constructor for TypeOfTicket
 
-            while (NumberOfTickets < 1)
+            Console.WriteLine("How many tickets do you want: ");
+            NumberOfTickets = int.Parse(Console.ReadLine());//needs to be able to handle exceptions
+
+            while (Switch == false)
             {
                 if (NumberOfTickets == 0)
                 {
                     Console.WriteLine("Please enter a higher number: ");
                     int v = int.Parse(Console.ReadLine());
                     NumberOfTickets = v;
+                    Switch = false;
 
                 }
                 else
                 {
-                    Console.WriteLine("You want " + NumberOfTickets + "tickets");
+                    Console.WriteLine("You want " + NumberOfTickets + " tickets");
+                    Switch = true;
                     break;
-
                 }
             }
 
             Console.WriteLine("What type of ticket do you want");
             TypeOfTicket = Console.ReadLine();
 
-            while (Switch == false)
+            while (Switch == false)//issue is here
             {
                 if (TypeOfTicket != "first class" || TypeOfTicket != "business")
                 {
@@ -50,11 +56,13 @@ namespace ThreeClasses
                 {
                     Console.WriteLine("You have selected first class");
                     Switch = true;
+                    break;
                 }
                 else if (TypeOfTicket == "business")
                 {
                     Console.WriteLine("You have selected business");
                     Switch = true;
+                    break;
                 }
             }
 
@@ -62,5 +70,8 @@ namespace ThreeClasses
 
 
         }
+
+        public int TicketAmount { get; }
+        public string TicketType { get; }
     }
 }
