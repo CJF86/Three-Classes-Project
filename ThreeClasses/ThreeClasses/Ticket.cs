@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace ThreeClasses
 {
-    class Ticket //: //Passenger //removing inheritance from passenger prevents triggering of passenger method
+    class Ticket //: Program //removing inheritance from passenger prevents triggering of passenger method
     {
-        public int NumberOfTickets; 
-        public string TypeOfTicket; 
+        private int NumberOfTickets; //switching to private
+        private string TypeOfTicket; //switching to private
         public bool Switch;
-
+        public int TicketAmount { get => NumberOfTickets; set => NumberOfTickets = value; }
+        public string TicketType { get => TypeOfTicket; set => TypeOfTicket = value; }
         public Ticket(int NumberOfTickets,string TypeOfTicket)
         {
-            NumberOfTickets = TicketAmount; //Creates constructor for NumberOfTickets
-            TypeOfTicket = TicketType; //Creates constructor for TypeOfTicket
+            //NumberOfTickets = TicketAmount; //Creates constructor for NumberOfTickets
+            //TypeOfTicket = TicketType; //Creates constructor for TypeOfTicket
 
             Console.WriteLine("How many tickets do you want: ");
             NumberOfTickets = int.Parse(Console.ReadLine()); //needs to be able to handle exceptions
@@ -64,14 +65,12 @@ namespace ThreeClasses
                     Switch = true;
                     break;
                 }
+
             }
 
-            
-
-
         }
+        //public int TicketAmount { get; }
+        //public string TicketType { get; }
 
-        public int TicketAmount { get; }
-        public string TicketType { get; }
     }
 }
