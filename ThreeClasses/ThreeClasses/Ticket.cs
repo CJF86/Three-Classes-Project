@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace ThreeClasses
 {
-    class Ticket : Passenger
+    class Ticket //: //Passenger //removing inheritance from passenger prevents triggering of passenger method
     {
-        public int NumberOfTickets; //create constructor for variable
-        public string TypeOfTicket; //create constructor for variable
+        public int NumberOfTickets; 
+        public string TypeOfTicket; 
         public bool Switch;
-
-        
-        
 
         public Ticket(int NumberOfTickets,string TypeOfTicket)
         {
@@ -21,7 +18,7 @@ namespace ThreeClasses
             TypeOfTicket = TicketType; //Creates constructor for TypeOfTicket
 
             Console.WriteLine("How many tickets do you want: ");
-            NumberOfTickets = int.Parse(Console.ReadLine());//needs to be able to handle exceptions
+            NumberOfTickets = int.Parse(Console.ReadLine()); //needs to be able to handle exceptions
 
             while (Switch == false)
             {
@@ -43,12 +40,15 @@ namespace ThreeClasses
 
             Console.WriteLine("What type of ticket do you want");
             TypeOfTicket = Console.ReadLine();
+            Switch = false;
 
-            while (Switch == false)//issue is here
+            //Switch is set to true which does not trigger the while loop
+
+            while (Switch == false)
             {
-                if (TypeOfTicket != "first class" || TypeOfTicket != "business")
+                if (TypeOfTicket != "first class" && TypeOfTicket != "business")
                 {
-                    Console.WriteLine("Please enter a ticket type: ");
+                    Console.WriteLine("Please enter a valid ticket type: ");
                     TypeOfTicket = Console.ReadLine();
                     Switch = false;
                 }

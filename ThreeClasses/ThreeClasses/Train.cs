@@ -21,7 +21,7 @@ namespace ThreeClasses
 
             while(LoopBreak == false)
             {
-                if (TypeOfTrain != "electric" || TypeOfTrain != "coal")
+                if (TypeOfTrain != "electric" && TypeOfTrain != "coal")
                 {
                     Console.WriteLine("Please select a type of train: ");
                     User_Input = Console.ReadLine();
