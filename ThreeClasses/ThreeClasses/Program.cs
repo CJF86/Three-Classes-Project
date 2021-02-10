@@ -10,19 +10,35 @@ namespace ThreeClasses
     {
         static void Main(string[] args)
         {
+            //code needs to be able to handle exceptions
 
             Passenger john = new Passenger("John", " Cena"); //creates passenger named john cena using passenger method/class
 
+            Console.WriteLine("Please enter your first name: ");
+
+            string First_Name = Console.ReadLine(); 
+
+            Console.WriteLine("Please enter your last name: ");
+
+            string Last_Name = Console.ReadLine(); 
+
+            Passenger newobj1 = new Passenger(First_Name, Last_Name); //creates passenger class instance
+
             Console.WriteLine("how many tickets do you want");
 
-            int TicketAmount = int.Parse(Console.ReadLine());
+            int TicketAmount = int.Parse(Console.ReadLine()); 
 
             Console.WriteLine("What type of ticket do you want");
 
-            string TicketType = Console.ReadLine(); //Do not know why this is triggering the passenger method
+            string TicketType = Console.ReadLine(); 
 
+            Ticket newobj = new Ticket(TicketAmount, TicketType); //creates ticket class instance
 
-            Ticket newobj = new Ticket(TicketAmount, TicketType); //not using these values but requiring them to run
+            Console.WriteLine("What type of train do you want: ");
+
+            string Train_Type = Console.ReadLine();
+
+            Train newobj2 = new Train(Train_Type); //creates train class instance
 
             Console.ReadLine();
             

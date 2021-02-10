@@ -15,11 +15,7 @@ namespace ThreeClasses
         public string TicketType { get => TypeOfTicket; set => TypeOfTicket = value; }
         public Ticket(int NumberOfTickets,string TypeOfTicket)
         {
-            //NumberOfTickets = TicketAmount; //Creates constructor for NumberOfTickets
-            //TypeOfTicket = TicketType; //Creates constructor for TypeOfTicket
-
-            Console.WriteLine("How many tickets do you want: ");
-            NumberOfTickets = int.Parse(Console.ReadLine()); //needs to be able to handle exceptions
+            
 
             while (Switch == false)
             {
@@ -39,8 +35,7 @@ namespace ThreeClasses
                 }
             }
 
-            Console.WriteLine("What type of ticket do you want");
-            TypeOfTicket = Console.ReadLine();
+            
             Switch = false;
 
             //Switch is set to true which does not trigger the while loop
@@ -69,8 +64,7 @@ namespace ThreeClasses
             }
 
         }
-        //public int TicketAmount { get; }
-        //public string TicketType { get; }
+        
 
     }
 }

@@ -8,15 +8,17 @@ namespace ThreeClasses
 {
     class Train
     {
-        public string TypeOfTrain;//Do not know why it doesn't like this but it doesn't
-        public string User_Input;
+        private string TypeOfTrain;
+
+
         public bool LoopBreak;//boolean variable used to break out of loops
+
+        public string Train_Type { get => TypeOfTrain; set => TypeOfTrain = value; }
+        
 
         public Train (string TypeOfTrain)
         {
-            Console.WriteLine("What type of train do you want: ");
-            User_Input = Console.ReadLine();
-            TypeOfTrain = User_Input; //potentially an error
+            
             LoopBreak = false;
 
             while(LoopBreak == false)
@@ -24,8 +26,7 @@ namespace ThreeClasses
                 if (TypeOfTrain != "electric" && TypeOfTrain != "coal")
                 {
                     Console.WriteLine("Please select a type of train: ");
-                    User_Input = Console.ReadLine();
-                    TypeOfTrain = User_Input;
+                    
                     LoopBreak = false;
 
                 }
